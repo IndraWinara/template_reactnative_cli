@@ -34,7 +34,7 @@ const MUTATE = async (dataPayload) => {
 
 
 
-        const apiResult = await fetch(`${VITE_URL}/${url}`, options);
+        const apiResult = await fetch(`${REACT_URL}/${url}`, options);
 
         const dataResult = await apiResult.json();
         console.log('result MUTATE', dataResult);

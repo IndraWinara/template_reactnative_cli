@@ -9,9 +9,7 @@ import Navigator from './src/pages/routes/Navigator';
 function App() {
   return (
     <NavigationContainer>
-        <MainLayout>
           <Navigator/>
-        </MainLayout>
     </NavigationContainer>
   );
 }

@@ -1,10 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useStore} from '../../../zustand';
 
 const DashboardScreen = () => {
+  const {bears ,increasePopulation} = useStore();
+
+  console.log(bears);
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Dashboard</Text>
+      <Text style={styles.header}>Dashboard Bears : {bears}</Text>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Section 1</Text>
         <Text style={styles.sectionContent}>Content for section 1...</Text>
@@ -17,6 +21,11 @@ const DashboardScreen = () => {
         <Text style={styles.sectionTitle}>Section 3</Text>
         <Text style={styles.sectionContent}>Content for section 3...</Text>
       </View>
+      <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={()=>increasePopulation()}>
+        <Text style={styles.buttonText}>Go to Dashboard</Text>
+      </TouchableOpacity>
+    </View>
     </View>
   );
 };
@@ -33,7 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color:'red'
+    color: 'red',
   },
   section: {
     marginBottom: 20,
@@ -41,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 4,
@@ -54,5 +63,11 @@ const styles = StyleSheet.create({
   sectionContent: {
     fontSize: 14,
     color: '#333',
+  },
+  button: {
+    backgroundColor: 'red',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5,
   },
 });
