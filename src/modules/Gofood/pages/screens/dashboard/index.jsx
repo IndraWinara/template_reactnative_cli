@@ -2,26 +2,14 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {useStore} from '../../../zustand';
 
-const DashboardScreen = ({navigation}) => {
-  const {bears ,increasePopulation} = useStore();
-  const handleGoFood = () => {
-    navigation.navigate('gofood');
-  };
-  const handleGoRide = () => {
-    navigation.navigate('goride');
-  };
+const DashboardScreen = () => {
+  const {bears, increasePopulation} = useStore();
+
   console.log(bears);
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Dashboard Main</Text>
-      <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={()=>handleGoFood()}>
-        <Text style={styles.buttonText}>Go to Go food</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={()=>handleGoRide()}>
-        <Text style={styles.buttonText}>Go to Go Goride</Text>
-      </TouchableOpacity>
-    </View>
+      <Text style={styles.header}>Dashboard Gofood</Text>
+      <View style={styles.container}></View>
     </View>
   );
 };
@@ -32,8 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f8f9fa',
-    gap : 10
+    backgroundColor: 'blue',
   },
   header: {
     fontSize: 24,

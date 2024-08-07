@@ -9,7 +9,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login to Main</Text>
+        <Text style={styles.buttonText}>Go to Dashboard</Text>
       </TouchableOpacity>
     </View>
   );
@@ -22,10 +22,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor : "pink"
   },
   button: {
-    backgroundColor: 'black',
+    backgroundColor: 'red',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 5,

@@ -3,8 +3,6 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { DashboardScreen, LoginScreen } from '../screens';
 import ProfilesScreen from '../screens/profiles';
-import MainLayoutGoofood from '../../modules/Gofood/pages/layouts/MainLayout';
-import MainLayoutGoRide from '../../modules/Goride/pages/layouts/MainLayout';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -13,10 +11,7 @@ const Tab = createBottomTabNavigator();
 const Navigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="drawer" component={MyDrawer} />
-      <Stack.Screen name="gofood" component={MainLayoutGoofood} />
-      <Stack.Screen name="goride" component={MainLayoutGoRide} />
     </Stack.Navigator>
   );
 };
